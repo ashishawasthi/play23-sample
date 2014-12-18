@@ -12,7 +12,7 @@ import java.util.*;
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render("Message to Index"));
+        return ok(index.render("Sample PlayFramework 2.3 Java Application"));
     }
 
     public static Result addUser() {
