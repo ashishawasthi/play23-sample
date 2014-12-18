@@ -15,10 +15,14 @@ public class Application extends Controller {
         return ok(index.render("Sample PlayFramework 2.3 Java Application"));
     }
 
+    public static Result users() {
+        return ok(users.render("Sample PlayFramework - Users Module"));
+    }
+
     public static Result addUser() {
     	User newUser = Form.form(User.class).bindFromRequest().get();
     	newUser.save();
-    	return redirect(routes.Application.index());
+    	return redirect(routes.Application.users());
     }
     
     public static Result listUsers() {

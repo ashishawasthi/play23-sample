@@ -8,10 +8,15 @@ import play.db.ebean.Model;
 
 @Entity
 public class User extends Model {
+
 	@Id
 	private String id;
-	//@Required
+	@Required
 	private String fullName;
+	@Required
+	private String email;
+	private String preferredName;
+
 	public String getId() {
 		return id;
 	}
@@ -23,5 +28,17 @@ public class User extends Model {
 	}
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPreferredName() {
+		return preferredName;
+	}
+	public void setPreferredName(String preferredName) {
+		this.preferredName = preferredName;
 	}
 }
