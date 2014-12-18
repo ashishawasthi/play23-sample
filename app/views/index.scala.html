@@ -1,0 +1,10 @@
+@(message: String)
+
+@main("Title to main") {
+<script src="@routes.Assets.at("javascripts/index.js")" type="text/javascript"></script>
+<ul id="users"></ul>
+<form action="@routes.Application.addUser()" method="post" >
+	<input name="fullName" >
+	<input type="submit" >
+</form>
+}
