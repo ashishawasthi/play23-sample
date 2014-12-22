@@ -31,4 +31,4 @@ EXPOSE 9000
 # elasticsearch service in the foreground
 #CMD ["/opt/start-play"]
 
-CMD ["activator", "run"]
+CMD "activator", "run"
