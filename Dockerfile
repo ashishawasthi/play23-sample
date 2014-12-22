@@ -16,7 +16,7 @@ RUN cd /tmp && \
     cd /opt && \
     unzip /tmp/typesafe-activator-$ACTIVATOR_VERSION.zip
 
-RUN cd /var/app/current
+#RUN cd /var/app/current
 
 # Add a start script
 #ADD start-play /opt/
