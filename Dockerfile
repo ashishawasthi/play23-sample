@@ -1,6 +1,7 @@
 FROM ubuntu:14.04
 
 ENV ACTIVATOR_VERSION 1.2.12
+ENV PATH $PATH:/var/app/current
 
 # Update packages
 RUN apt-get update -y
@@ -29,6 +30,5 @@ EXPOSE 9000
 
 # elasticsearch service in the foreground
 #CMD ["/opt/start-play"]
-ENV PATH $PATH:/var/app/current
 
 CMD ["activator", "run"]
