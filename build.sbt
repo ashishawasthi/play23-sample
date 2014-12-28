@@ -1,4 +1,4 @@
-name := """playdef"""
+name := """play23-sample"""
 
 version := "1.0-SNAPSHOT"
 
