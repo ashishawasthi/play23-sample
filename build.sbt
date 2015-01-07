@@ -10,5 +10,10 @@ libraryDependencies ++= Seq(
   javaJdbc,
   javaEbean,
   cache,
-  javaWs
+  javaWs,
+  "be.objectify"  %% "deadbolt-java"     % "2.3.2",
+  // Comment the next line for local development of the Play Authentication core:
+  "com.feth"      %% "play-authenticate" % "0.6.8"
 )
+
+resolvers += Resolver.url("Objectify Play Repository", url("http://deadbolt.ws/releases/"))(Resolver.ivyStylePatterns)
