@@ -3,6 +3,9 @@ package models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.feth.play.module.pa.user.AuthUser;
+import com.feth.play.module.pa.user.AuthUserIdentity;
+
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
@@ -40,5 +43,25 @@ public class User extends Model {
 	}
 	public void setPreferredName(String preferredName) {
 		this.preferredName = preferredName;
+	}
+	public static User create(AuthUser authUser) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public static User findByAuthUserIdentity(AuthUserIdentity identity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public static boolean existsByAuthUserIdentity(AuthUser authUser) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public static void addLinkedAccount(AuthUser oldUser, AuthUser newUser) {
+		// TODO Auto-generated method stub
+		
+	}
+	public static void merge(AuthUser oldUser, AuthUser newUser) {
+		// TODO Auto-generated method stub
+		
 	}
 }

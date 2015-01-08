@@ -1,17 +1,21 @@
 package controllers;
 
+import java.util.List;
+
 import models.User;
-import play.*;
-import play.mvc.*;
-import play.libs.Json;
-import views.html.*;
 import play.data.Form;
 import play.db.ebean.Model;
-import java.util.*;
+import play.libs.Json;
+import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.index;
+import views.html.users;
 
 public class Application extends Controller {
 
-    public static Result index() {
+    private static final String FLASH_ERROR_KEY = "FLASH_ERROR_KEY";
+
+	public static Result index() {
         return ok(index.render("Sample PlayFramework 2.3 Java Application"));
     }
 
@@ -30,4 +34,8 @@ public class Application extends Controller {
     	return ok(Json.toJson(users));
     }
 
+    public static Result oAuthDenied(final String providerKey) {
+        flash(FLASH_ERROR_KEY, "You need to accept the OAuth connection in order to use this website!");
+        return redirect(routes.Application.index());
+    }
 }

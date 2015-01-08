@@ -1,5 +1,21 @@
 @(message: String)
 
+@import com.feth.play.module.pa.views.html._
+
+@forProviders() { p =>
+    <a href="@p.getUrl()">@p.getKey()</a>
+}
+
+@currentAuth() { auth =>
+    Logged in with provider '@auth.getProvider()' and the user ID '@auth.getId()'<br/>
+    Your session expires
+    @if(auth.expires() == -1){
+        never
+    } else {
+        at @auth.expires() (UNIX timestamp)
+    }
+}
+
 @main(message) {
 <script src="@routes.Assets.at("javascripts/index.js")" type="text/javascript"></script>
 <ul id="users"></ul>
